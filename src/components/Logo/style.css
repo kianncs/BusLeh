@@ -1,0 +1,46 @@
+.center {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 180px;
+}
+
+.circleShape {
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 12px 58px #ffffff70;
+}
+
+.busIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+  color: #8E54E9;
+  display: block;
+  background: -webkit-linear-gradient(#8E54E9, #4776E6);
+  background: linear-gradient(to right, #8E54E9, #4776E6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logoText {
+  position: absolute;
+  top: 280px;
+  font-size: 40px;
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+  letter-spacing: 1px;
+  height: 70px;
+  text-shadow: 0 12px 58px #ffffff70;
+}
