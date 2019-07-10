@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import '../../src/style.css'
 import history from '../history';
 
@@ -38,12 +38,12 @@ class App extends React.Component {
       <div className="wrapper">
         <div className="ui container bodyContainer">
           <Logo />
-          <Router history={history}>
+          <HashRouter history={history}>
             <Switch>
               <Route path="/" exact component={InputForm} />
               <Route path="/busArrival/:busStopCode" component={BusList} />
             </Switch>
-          </Router>
+          </HashRouter>
         </div>
       </div>
     )
