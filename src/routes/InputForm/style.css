@@ -1,0 +1,20 @@
+.formContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 300px;
+}
+
+.errorText {
+  padding-top: 5px;
+  color: white;
+}
+
+.shadow {
+  -webkit-box-shadow: 6px 4px 20px 6px rgba(87, 87, 87, 0.48);
+  -moz-box-shadow: 6px 4px 20px 6px rgba(87, 87, 87, 0.48);
+  box-shadow: 6px 4px 20px 6px rgba(87, 87, 87, 0.48);
+}
