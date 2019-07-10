@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0c5156405fdee98c064bc4e7f8aa7971",
+    "revision": "2dca6d714360d4b780b511f6be49e213",
     "url": "/BusLeh/index.html"
   },
   {
-    "revision": "ffd0db294bfa991b0cf4",
-    "url": "/BusLeh/static/css/2.7029bf15.chunk.css"
+    "revision": "f14c22b05d5cb755b0e0",
+    "url": "/BusLeh/static/css/2.dc52f65d.chunk.css"
   },
   {
-    "revision": "886a955c3b46bcfbf94b",
+    "revision": "00e21bd78e6563610b19",
     "url": "/BusLeh/static/css/main.92775799.chunk.css"
   },
   {
-    "revision": "ffd0db294bfa991b0cf4",
-    "url": "/BusLeh/static/js/2.7a0767a1.chunk.js"
+    "revision": "f14c22b05d5cb755b0e0",
+    "url": "/BusLeh/static/js/2.0a0c7581.chunk.js"
   },
   {
-    "revision": "886a955c3b46bcfbf94b",
-    "url": "/BusLeh/static/js/main.203c925e.chunk.js"
+    "revision": "00e21bd78e6563610b19",
+    "url": "/BusLeh/static/js/main.eaefc18d.chunk.js"
   },
   {
     "revision": "80d2336b23133762e530",
