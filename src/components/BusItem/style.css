@@ -1,0 +1,79 @@
+.item {
+  height: 45px;
+}
+
+.icon, .busNumber {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  float: left;
+}
+
+.bus {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #575757;
+}
+
+.busNumber div {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  color: #575757;
+}
+
+.busArrivalTime, .busFeature {
+  height: 35px;
+  width: 35px;
+  float: right;
+  border-radius: 4px;
+  position: relative;
+  padding: 3px;
+  margin-top: 5px;
+}
+
+.green {
+  background: #7fe32d;
+}
+
+.grey {
+  background: rgba(87, 87, 87);
+}
+
+.busArrivalTime div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 600;
+  font-family: 'Open Sans';
+}
+
+.busFeatureIcon {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  color: #575757;
+}
+
+.ui.relaxed.list:not(.horizontal)>.item:not(:first-child) {
+  padding-bottom: 0px;
+}
+
+.ui.relaxed.list:not(.horizontal)>.item:not(:last-child) {
+  padding-bottom: 0px;
+}
+
+.ui.relaxed.list:not(.horizontal)>.item:not(:first-child) {
+  padding-top: 0px;
+}

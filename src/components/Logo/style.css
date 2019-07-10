@@ -1,14 +1,7 @@
-.center {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
 .logo {
   height: 80px;
   width: 80px;
   position: absolute;
-  top: 180px;
 }
 
 .circleShape {
@@ -17,7 +10,10 @@
   background-color: white;
   border-radius: 50%;
   position: relative;
-  box-shadow: 0 12px 58px #ffffff70;
+  /* box-shadow: 0 12px 58px #ffffff70; */
+  -webkit-box-shadow: 6px 4px 20px 6px rgba(87, 87, 87, 0.48);
+  -moz-box-shadow: 6px 4px 20px 6px rgba(87, 87, 87, 0.48);
+  box-shadow: 6px 4px 20px 6px rgba(87, 87, 87, 0.48);
 }
 
 .busIcon {
@@ -36,11 +32,20 @@
 
 .logoText {
   position: absolute;
-  top: 280px;
+  top: 105px;
   font-size: 40px;
   color: white;
   font-family: 'Kaushan Script', cursive;
   letter-spacing: 1px;
   height: 70px;
   text-shadow: 0 12px 58px #ffffff70;
+}
+
+.logoContainer {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
