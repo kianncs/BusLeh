@@ -35,6 +35,12 @@ class BusList extends React.Component {
         BusStopCode: this.state.busStopCode
       }
     });
+
+    // Sort the array based on bus service no
+    res.data.Services.sort(function (a,b) {
+      return parseInt(a.ServiceNo) - parseInt(b.ServiceNo);
+    })
+
     this.setState({
       busDataArray: res.data.Services,
       isLoading: false
@@ -85,6 +91,24 @@ class BusList extends React.Component {
     )
   }
 
+  renderErrorMessage () {
+    return (
+      <div>
+        Error
+      </div>
+    )
+  }
+
+  renderBusItem () {
+    return (
+      this.state.busDataArray.map((bus, index) => {
+        return (
+          <BusItem bus={bus} key={index}/>
+        )
+      })
+    )
+  }
+
   renderBusList() {
     return (
       <div>
@@ -92,13 +116,7 @@ class BusList extends React.Component {
           <div className="ui segment">
             <div className="ui relaxed divided list">
               { this.renderBusStopCode() }
-              {
-                this.state.busDataArray.map((bus, index) => {
-                  return (
-                    <BusItem bus={bus} key={index}/>
-                  )
-                })
-              }
+              { this.state.busDataArray.length === 0 ? this.renderErrorMessage() : this.renderBusItem() }
               <div className="lastUpdatedTime">
                 <label>
                   Last Updated: { CURRENT_TIME }
