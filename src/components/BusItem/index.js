@@ -17,9 +17,21 @@ class BusItem extends React.Component {
   }
 
   getTimeDiffInMinutes(etaTime) {
+    if (etaTime === null || etaTime === '' || etaTime === undefined) {
+      return 'NEA'
+    }
     let momentEtaTime = moment(etaTime);
     let diff = momentEtaTime.diff(CURRENT_TIME, 'minutes');
     return diff <= 0 ? 'Arr' : diff;
+  }
+
+  isBusArriving(etaTime) {
+    let result = this.getTimeDiffInMinutes(etaTime);
+    if (result === 'NEA' || Number(result)) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   render () {
@@ -40,9 +52,9 @@ class BusItem extends React.Component {
           <div className="busNumber">
             <div>{ServiceNo}</div>
           </div>
-          <div className={`busArrivalTime ${Number(this.getTimeDiffInMinutes(EstimatedArrival)) ? 'grey' : 'green'}`}>
+          <div className={`busArrivalTime ${this.isBusArriving(EstimatedArrival) ? 'green' : 'grey'}`}>
             <div>
-              { this.getTimeDiffInMinutes(EstimatedArrival ) }
+              { this.getTimeDiffInMinutes(EstimatedArrival) }
             </div>
           </div>
         </div>
