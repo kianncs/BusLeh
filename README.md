@@ -1,3 +1,3 @@
 # BusLeh
 
-![Alt text](../src/asserts/logo.png)
+<img src="../src/asserts/logo.png" alt="My cool logo"/>
