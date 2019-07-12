@@ -100,3 +100,30 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+
+.errorIconContainer {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.errorIcon {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #8559e9;
+}
+
+.errorMessage {
+  margin: 0px 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.errorMessage p {
+  text-align: center;
+  color: #8559e9;
+  font-size: 14px;
+}

@@ -9,6 +9,7 @@ import LTA from '../../apis/lta';
 import BusItem from '../../components/BusItem';
 import Spinner from '../../components/Spinner';
 import busListData from './busListData';
+import { async } from 'q';
 
 const CURRENT_TIME = moment().format('MMMM Do YYYY, h:mm:ss a');
 
@@ -25,11 +26,12 @@ class BusList extends React.Component {
     this.state = {
       busStopCode: this.props.match.params.busStopCode,
       busDataArray: [],
-      isLoading: true
+      isLoading: true,
+      currentTime: moment().format('MMMM Do YYYY, h:mm:ss a')
     }
   }
 
-  componentDidMount = async () => {
+  getLTA = async () => {
     const res = await LTA.get('/ltaodataservice/BusArrivalv2?', {
       params: {
         BusStopCode: this.state.busStopCode
@@ -40,15 +42,38 @@ class BusList extends React.Component {
     res.data.Services.sort(function (a,b) {
       return parseInt(a.ServiceNo) - parseInt(b.ServiceNo);
     })
-
+    console.log('hihi');
     this.setState({
       busDataArray: res.data.Services,
       isLoading: false
     })
+  }
+
+  getCurrentTime() {
+    this.interval = setInterval(() => {
+      this.setState({
+        currentTime: moment().format('MMMM Do YYYY, h:mm:ss a')
+      })
+    }, 60000)
+    return this.state.currentTime;
+  }
+
+  componentDidMount = async () => {
+    await this.getLTA();
+
+    this.interval = setInterval( async () => {
+      await this.getLTA()
+    }, 60000)
+
     // this.setState({
     //   busDataArray: busListData,
+    //   // busDataArray: [],
     //   isLoading: false
     // })
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   onClickBackButton = () => {
@@ -94,7 +119,15 @@ class BusList extends React.Component {
   renderErrorMessage () {
     return (
       <div>
-        Error
+        <div className="errorIconContainer">
+          <i className="fal fa-exclamation-triangle errorIcon"></i>
+        </div>
+        <div className="errorMessage">
+          <p>
+            Sorry! We are unable to find the arrival time for this bus stop,
+            Please ensure the code you entered is a valid one.
+          </p>
+        </div>
       </div>
     )
   }
@@ -119,7 +152,7 @@ class BusList extends React.Component {
               { this.state.busDataArray.length === 0 ? this.renderErrorMessage() : this.renderBusItem() }
               <div className="lastUpdatedTime">
                 <label>
-                  Last Updated: { CURRENT_TIME }
+                  Last Updated: { this.getCurrentTime() }
                 </label>
               </div>
             </div>
