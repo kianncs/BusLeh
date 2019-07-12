@@ -42,7 +42,7 @@ class BusList extends React.Component {
     res.data.Services.sort(function (a,b) {
       return parseInt(a.ServiceNo) - parseInt(b.ServiceNo);
     })
-    console.log('hihi');
+
     this.setState({
       busDataArray: res.data.Services,
       isLoading: false
