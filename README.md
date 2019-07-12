@@ -1,3 +1,5 @@
 # BusLeh
 
-<img src="/src/asserts/logo.png" width="100px" height="100px" alt="My cool logo"/>
+<p align="center">
+  <img src="/src/asserts/logo.png" width="300px" height="300px" alt="My cool logo"/>
+</p>
