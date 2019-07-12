@@ -9,7 +9,6 @@ import LTA from '../../apis/lta';
 import BusItem from '../../components/BusItem';
 import Spinner from '../../components/Spinner';
 import busListData from './busListData';
-import { async } from 'q';
 
 const CURRENT_TIME = moment().format('MMMM Do YYYY, h:mm:ss a');
 
@@ -62,7 +61,7 @@ class BusList extends React.Component {
     await this.getLTA();
 
     this.interval = setInterval( async () => {
-      await this.getLTA()
+      await this.getLTA();
     }, 60000)
 
     // this.setState({
