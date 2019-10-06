@@ -46,6 +46,14 @@
   background: rgba(87, 87, 87);
 }
 
+.grey2 {
+  background: #737272
+}
+
+.purple {
+  color: #8E54E9;
+}
+
 .busArrivalTime div {
   position: absolute;
   top: 50%;
@@ -76,4 +84,8 @@
 
 .ui.relaxed.list:not(.horizontal)>.item:not(:first-child) {
   padding-top: 0px;
+}
+
+.marginRight {
+  margin-right: 5px;
 }
