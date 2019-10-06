@@ -34,27 +34,37 @@ class BusItem extends React.Component {
     }
   }
 
+  isBusDoubleDecker(busType) {
+    return busType === 'DD' ? true : false;
+  }
+
   render () {
     const {
       ServiceNo,
     } = this.props.bus;
 
-    const {
-      EstimatedArrival,
-    } = this.props.bus.NextBus
+    let busType = this.props.bus.NextBus.Type;
+    console.log('busType: ', this.props.bus.NextBus.Type);
+    let busArrival = this.props.bus.NextBus.EstimatedArrival;
+    let nextBusArrival = this.props.bus.NextBus2.EstimatedArrival;
 
     return (
       <div className="item">
         <div className="content">
           <div className="icon">
-            <i className="fal fa-bus bus"></i>
+            <i className={`fal fa-bus bus ${this.isBusDoubleDecker(busType) ? 'purple' : '' }`}></i>
           </div>
           <div className="busNumber">
             <div>{ServiceNo}</div>
           </div>
-          <div className={`busArrivalTime ${this.isBusArriving(EstimatedArrival) ? 'green' : 'grey'}`}>
+          <div className={`busArrivalTime ${this.isBusArriving(nextBusArrival) ? 'green' : 'grey2'}`}>
             <div>
-              { this.getTimeDiffInMinutes(EstimatedArrival) }
+              { this.getTimeDiffInMinutes(nextBusArrival) }
+            </div>
+          </div>
+          <div className={`busArrivalTime marginRight ${this.isBusArriving(busArrival) ? 'green' : 'grey'}`}>
+            <div>
+              { this.getTimeDiffInMinutes(busArrival) }
             </div>
           </div>
         </div>
